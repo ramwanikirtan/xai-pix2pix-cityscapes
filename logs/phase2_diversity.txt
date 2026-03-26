@@ -1,0 +1,6 @@
+Phase 2 MC-Dropout Diversity Metrics
+========================================
+Pairwise LPIPS: 0.1909 +/- 0.0170
+Num pairs: 500
+Num images: 50
+Samples per image: 5
