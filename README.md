@@ -21,28 +21,9 @@ This repository presents a novel framework that integrates **Explainable AI (XAI
 
 ## Architecture
 
-```
-Segmentation Map (input)
-        │
-        ▼
-┌───────────────────┐
-│   U-Net Generator  │  ← Grad-CAM hooks on skip connections
-│   (8 skip layers)  │
-│   + MC Dropout     │  ← Multiple diverse outputs at test time
-└───────────────────┘
-        │
-        ▼
-   Generated Photo
-        │
-        ▼
-┌───────────────────┐
-│  PatchGAN (70×70)  │  ← Spatial explanation maps
-│  Discriminator     │
-└───────────────────┘
-        │
-        ▼
-  [1×1×30×30] spatial decision map
-```
+![Architecture](logs/figures/architecture.png)
+
+*The XAI-Pix2Pix pipeline: segmentation maps are translated to photorealistic images via a U-Net generator with Grad-CAM hooks on skip connections. MC-Dropout produces N diverse outputs at test time. The PatchGAN discriminator outputs a 30×30 spatial decision map used for patch-level explanation.*
 
 ---
 
